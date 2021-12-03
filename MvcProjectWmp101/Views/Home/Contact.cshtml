@@ -4,4 +4,61 @@
 }
 
 <h2>Contact</h2>
+<!--
+    > : elementin alt elementini oluşturuyoruz.
+    + : aynı seviyede eleman oluşturmak için kullanılıyor.
+    . : class lara verilen kısa yol
+    # : id lere verilen kısa yol
+    [] : elementin attribute lerini eklemek için kulllanılıyor.
+    * : elementin kaç kere tekrar edeceğini belirtmek için kullanılır.
+    $ : artan şekilde index numaraları atayabilmek için
+    ^ : bir üst seviyeye çıkmak için kullanılır.
+    -->
+<!--html:5-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+</body>
+</html>
+
+<!--input:text-->
+<input type="text" value="" id="" />
+
+<!--input:number-->
+<input type="number" value="" id="" />
+
+https://docs.emmet.io/
+https://docs.emmet.io/cheat-sheet/
+
+<a href="/home/index">Degistir</a>
+<a href="#"></a>
+<a href="" class="btn btn-sucsess"></a>
+
+@*(ul>li>p>lorem3)+(ul>li>a)*@
+<ul>
+    <li>
+        <p>Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</p>
+    </li>
+</ul>
+<ul>
+    <li><a href=""></a></li>
+</ul>
+
+@*div.collapse.navbar-collapse#navbarSupportedContent>ul.navbar-nav.me-auto.mb-2.mb-lg-0>(li.nav-item{link})*3^^form.d-flex>input.form-control.me-2[type="search"][placeholder="Search"][aria-label="Search"]+button.btn.btn-outline-success[type="submit"]{Search}*@
+
+<div id="navbarSupportedContent" class="collapse navbar-collapse">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">link</li>
+        <li class="nav-item">link</li>
+        <li class="nav-item">link</li>
+    </ul>
+</div>
+<form class="d-flex">
+    <input type="search" value="" class="form-control me-2" placeholder="Search" aria-label="Search" />
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
 
