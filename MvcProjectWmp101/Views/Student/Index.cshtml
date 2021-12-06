@@ -1,0 +1,12 @@
+﻿@using MvcProjectWmp101.Models;
+@model IEnumerable<MvcProjectWmp101.Models.Students>
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (var student in Model)
+{
+    @(student.Name+" "+student.Surname+"                           "+student.Classes.ClassName)
+    <br />
+}
+

@@ -14,7 +14,7 @@ namespace MvcProjectWmp101.Library
 
         public static MvcHtmlString Button(this HtmlHelper helper, string id = "", string typ = "", string text = "")
         {
-            string html = string.Format($"<button id='{id}' name='{id}' type='{typ}'>{text}</button>");
+            string html = string.Format("<button id='{0}' name='{0}' type='{1}'>{2}</button>",id,typ,text);
 
             return MvcHtmlString.Create(html);
             //< button id = "" name = "" type = "" class="">Text</button>
@@ -61,7 +61,7 @@ namespace MvcProjectWmp101.Library
 
         public static MvcHtmlString Paragraph(this HtmlHelper helper,string id="",int borderSize=1,string borderStyle="solid",Func<object,HelperResult>template=null)
         {
-            string html = string.Format($"<p id='{id}' name='{id}' style='border:{borderSize}px {borderStyle}'>{template.Invoke(null)}</p>");
+            string html = string.Format($"<p id='{id}' name='{id}' style='border:{borderSize}px {borderStyle}>{template.Invoke(null)}</p>");
 
             return MvcHtmlString.Create(html);
 

@@ -4,4 +4,22 @@
 }
 
 <h2>Index4</h2>
+<h3>Url Helper</h3>
+
+<a href="@Url.Action("Index","Razor/")">Razor index ine git</a>
+
+@* @Url.Action ==> gidilecek action metodunun url linkini verir. *@
+
+@*@Url.Content() ==> verilen sanal bir yolu url e çevirir. *@
+
+@* @Url.Encode() ==> encode ile özel karakterler veya boşluk var ise url hataya düşmemesi için özel kodlara çevrilerek url oluşturulmasına yarar. *@
+
+<hr />
+@Url.Action("Index4")
+<br />
+@Url.Content("~/Razor/ Index4")
+<br /> 
+@Url.Encode("~/Home/Index?arama=onur ağıcı")
+<br />
+<a href="~/Home/Index?arama=onur ağıcı">content</a>
 
