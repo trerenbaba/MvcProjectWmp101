@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MvcProjectWmp101.Models;
 using MvcProjectWmp101.Models.Manager;
+using MvcProjectWmp101.ViewModel;
 
 namespace MvcProjectWmp101.Controllers
 {
@@ -14,9 +15,14 @@ namespace MvcProjectWmp101.Controllers
         public ActionResult Index()
         {
             DatabaseContext db = new DatabaseContext();
-            List<Persons> persons = db.Persons.ToList();
+            //List<Persons> persons = db.Persons.ToList();
 
-            return View(persons);
+            PerAddViewModel model = new PerAddViewModel();
+            model.Persons = db.Persons.ToList();
+            model.Addresses = db.Adresses.ToList();
+
+
+            return View(model);
         }
     }
 }

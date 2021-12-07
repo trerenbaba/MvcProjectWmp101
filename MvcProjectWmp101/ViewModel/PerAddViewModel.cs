@@ -6,10 +6,11 @@ using System.Web;
 
 namespace MvcProjectWmp101.ViewModel
 {
-    public class indexViewModel
+    public class PerAddViewModel
     {
-        public Kisi KisiNesnesi { get; set; }
-        public Adres AdresNesnesi { get; set; }
-        
+        public List<Persons> Persons { get; set; }
+        public List<Addresses> Addresses { get; set; }
+
+
     }
 }

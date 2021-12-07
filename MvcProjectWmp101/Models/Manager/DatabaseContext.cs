@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using System.Data.Entity;
 
 namespace MvcProjectWmp101.Models.Manager
 {
-    public class DatabaseContext:DbContext
+    public class DatabaseContext : DbContext
     {
         public DbSet<Persons> Persons { get; set; }
-        public DbSet<Addresses> Addresses { get; set; }
+
+        public DbSet<Addresses> Adresses { get; set; }
 
         public DatabaseContext()
         {
@@ -24,8 +25,7 @@ namespace MvcProjectWmp101.Models.Manager
         {
             base.InitializeDatabase(context);
         }
-
-        //Seed Database ==> database oluştuktan sonra eklenmesi gereken işlemler için kullanılır.
+        //Seed Database ==> Database oluştuktan sonra eklenmesi gereken işlemler için kullanılır.
         protected override void Seed(DatabaseContext context)
         {
             for (int i = 0; i < 10; i++)
@@ -33,23 +33,22 @@ namespace MvcProjectWmp101.Models.Manager
                 Persons per = new Persons();
                 per.Name = FakeData.NameData.GetFirstName();
                 per.SurName = FakeData.NameData.GetSurname();
-                per.Age = FakeData.NumberData.GetNumber(10,99);
+                per.Age = FakeData.NumberData.GetNumber(10, 99);
+
                 context.Persons.Add(per);
             }
-
+            context.SaveChanges();
             List<Persons> AllPersons = context.Persons.ToList();
-
             foreach (Persons person in AllPersons)
             {
-                for (int i = 0; i < FakeData.NumberData.GetNumber(1,5); i++)
+                for (int i = 0; i < FakeData.NumberData.GetNumber(1, 5); i++)
                 {
                     Addresses adr = new Addresses();
                     adr.Description = FakeData.PlaceData.GetAddress();
                     adr.City = FakeData.PlaceData.GetCity();
                     adr.Persons = person;
-                    context.Addresses.Add(adr);
+                    context.Adresses.Add(adr);
                 }
-
             }
             context.SaveChanges();
         }
