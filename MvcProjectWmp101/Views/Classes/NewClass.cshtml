@@ -1,0 +1,37 @@
+﻿@model MvcProjectWmp101.Models.Classes
+@{
+    ViewBag.Title = "NewClass";
+}
+
+<h2>NewClass</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="input-group">
+        @if (ViewBag.Result != null)
+        {
+            <div class="alert alert-@ViewBag.Status" role="alert">
+                @ViewBag.Result
+            </div>
+        }
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text w-15" id="txtName">Name</span>
+        @Html.TextBoxFor(x => x.ClassName, new { @class = "form-control", placeholder = "Class Name" })
+    </div>
+    
+    if (ViewBag.Result != null)
+    {
+        <div class="input-group mb-3">
+            @Html.ActionLink("Geri Don", "Index", "CsEf", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+    else
+    {
+        <div class="input-group mb-3">
+            <input type="submit" value="Save" class="btn btn-success" />
+        </div>
+    }
+
+}
+
