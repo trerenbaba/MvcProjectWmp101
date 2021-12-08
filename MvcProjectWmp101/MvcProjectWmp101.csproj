@@ -193,6 +193,9 @@
     <Content Include="Views\Addresses\NewAddress.cshtml" />
     <Content Include="Views\CsEf\Index.cshtml" />
     <Content Include="Views\Classes\NewClass.cshtml" />
+    <Content Include="Views\Persons\Update.cshtml" />
+    <Content Include="Views\Addresses\Update.cshtml" />
+    <Content Include="Views\Persons\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

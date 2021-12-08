@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div>
                 @Html.ActionLink("Add Person", "NewPerson", "Persons", null, new { @class = "btn btn-primary" })
             </div>
@@ -28,11 +28,16 @@
                 {
                     <li class="list-group-item">
                         <i class="bi bi-people" style="color:red;">  </i> @(per.Name+" "+per.SurName) (<i>@per.Age</i>)
+                        <div class="float-end">
+                            @Html.ActionLink("Update", "Update", "Persons",new {pid=@per.Id}, new { @class = "btn btn-primary btn-sm" })
+                            @Html.ActionLink("Delete", "Delete", "Persons", new {pid = @per.Id }, new { @class = "btn btn-danger btn-sm" })
+                        </div>
+
                     </li>
                 }
             </ul>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div>
                 @Html.ActionLink("Add Address", "NewAddress", "Addresses", null, new { @class = "btn btn-primary" })
             </div>
@@ -44,9 +49,13 @@
                 </li>
                 @foreach (var adr in Model.Addresses)
                 {
-                    <li class="list-group-item">
-                        <i class="bi bi-house"> </i> @adr.Description <i class="fas fa-city"></i> @adr.City (<i>@(adr.Persons.Name+" "+adr.Persons.SurName)</i>)
-                    </li>
+            <li class="list-group-item">
+                <i class="bi bi-house"> </i> @adr.Description <i class="fas fa-city"></i> @adr.City (<i>@(adr.Persons.Name+" "+adr.Persons.SurName)</i>)
+                <div class="float-end">
+                    @Html.ActionLink("Update", "Update", "Addresses", new { aid = @adr.Id, pid=@adr.Persons.Id }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Delete", "Delete", "Addresses", new { aid = @adr.Id }, new { @class = "btn btn-danger btn-sm" })
+                </div>
+            </li>
                 }
             </ul>
         </div>

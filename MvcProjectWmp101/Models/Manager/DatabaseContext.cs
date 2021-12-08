@@ -16,8 +16,9 @@ namespace MvcProjectWmp101.Models.Manager
         {
             Database.SetInitializer(new DatabaseCreator());
         }
-
+       
     }
+
     public class DatabaseCreator : CreateDatabaseIfNotExists<DatabaseContext>
     {
         //Initialize database ==> Database oluşmadan önce yapılması gereken işlemleri eklemek için kullanılır.

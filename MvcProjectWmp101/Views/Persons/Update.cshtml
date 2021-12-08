@@ -1,12 +1,13 @@
 ﻿@model MvcProjectWmp101.Models.Persons
 @{
-    ViewBag.Title = "NewPerson";
+    ViewBag.Title = "Update";
 }
 
-<h2>NewPerson</h2>
+<h2>Update</h2>
 
 @using (Html.BeginForm())
 {
+    @Html.HiddenFor(x=>x.Id)
     <div class="input-group">
         @if (ViewBag.Result != null)
         {
@@ -37,11 +38,12 @@
     else
     {
         <div class="input-group mb-3">
-            <input type="submit" value="Save" class="btn btn-success" />
+            <input type="submit" value="Update" class="btn btn-success" />
         </div>
     }
 
 
 
 }
+
 
